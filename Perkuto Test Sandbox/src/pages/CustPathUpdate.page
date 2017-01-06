@@ -1,0 +1,25 @@
+<apex:page standardController="p2s_base1__CustomerPath__c" recordSetVar="cpList">
+    <apex:sectionHeader title="Bulk Update People"/>
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageMessages />
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}" immediate="true"/>
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="LifeCycle Stage Update" collapsible="false">
+            <apex:inputField value="{!p2s_base1__CustomerPath__c.Lifecycle_Stage__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Selected Opportunities" columns="1">
+            <apex:pageBlockTable value="{!selected}" var="cp">
+                <apex:column value="{!cp.Name__c}"/>
+                <apex:column value="{!cp.Company__c}"/>
+                <apex:column value="{!cp.Lifecycle_Stage__c}"/>
+                <apex:column value="{!cp.Lifecycle_Stage_Reason__c}"/>
+                <apex:column value="{!cp.Last_Task_Date__c}"/>
+                <apex:column value="{!cp.Last_Task__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

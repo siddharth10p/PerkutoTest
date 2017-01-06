@@ -1,0 +1,21 @@
+<apex:page >
+<!--  action="{!IF(NOT(CONTAINS($CurrentPage.URL, '%2Fhome%2Fhome.jsp')), -->
+<!--             URLFOR('/home/home.jsp'), '')}" -->
+    <apex:includeScript value="//code.jquery.com/jquery-3.1.0.min.js"/>
+
+    <base target="_top"/>
+    <apex:pageblock title="Tasks">
+        <apex:enhancedList type="Activity" height="450"
+        rowsPerPage="25" id="activityList" customizable="true" />
+    </apex:pageblock>
+
+    <apex:pageBlock title="Opportunity Pipeline">
+        <apex:enhancedList type="Opportunity" height="450"
+        rowsPerPage="25" id="opptyList" customizable="true" />
+    </apex:pageBlock>
+
+    <apex:pageblock title="People">
+        <apex:enhancedList type="p2s_base1__CustomerPath__c" height="450"
+        rowsPerPage="25" id="cpList" customizable="true" />
+    </apex:pageblock>
+</apex:page>
